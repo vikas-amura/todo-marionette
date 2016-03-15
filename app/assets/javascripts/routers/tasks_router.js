@@ -1,9 +1,5 @@
 TodoMarionette.Routers.TasksRouter = Marionette.AppRouter.extend({
-  routes: {
+  appRoutes: {
     '(/)' : 'index'
-  },
-
-  index: function() {
-    console.log("I'm inside router index");
-  },
+  }
 });
