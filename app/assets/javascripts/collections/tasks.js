@@ -1,4 +1,4 @@
-TodoMarionette.Collection = Marionette.CollectionView.extend({
+TodoMarionette.Collections.Tasks = Backbone.Collection.extend({
 
   model: TodoMarionette.Models.Task,
 

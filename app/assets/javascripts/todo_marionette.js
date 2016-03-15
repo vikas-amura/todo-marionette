@@ -21,7 +21,6 @@ window.TodoMarionette = {
   },
 },
 
-
 $(document).ready(function(){
   TodoMarionette.initialize();
 });
