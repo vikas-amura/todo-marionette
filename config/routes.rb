@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'tasks#index'
-
   resources :tasks
+  
+  get "/*ng", to: "tasks#ng"
+  root 'tasks#ng'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
