@@ -1,26 +1,26 @@
 'use strict';
 
 var TodoMarionette = {};
+var App = {};
 
 window.TodoMarionette = {
   Models: {},
   Collections: {},
   Controllers: {},
   Routers: {},
+  Layouts:{},
   Views: {},
   Templates: {},
 
-  initialize: function() {
 
-    //initializing router
+},
+App = new Mn.Application();
+App.on('start',function(){
     TodoMarionette._controllers = {tasks: new TodoMarionette.Controllers.Tasks()}
     TodoMarionette.Routers.TasksRouter = new TodoMarionette.Routers.TasksRouter({controller: TodoMarionette._controllers.tasks});
+    Backbone.history.start({ pushState: true });
+});
 
-    //starting backbone.history which we need to history
-    return Backbone.history.start({ pushState: true });
-  },
-},
-
-$(document).ready(function(){
-  TodoMarionette.initialize();
+$(function(){
+  App.start();
 });

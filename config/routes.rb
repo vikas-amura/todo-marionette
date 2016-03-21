@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks
-  
+
   get "/*ng", to: "tasks#ng"
   root 'tasks#ng'
 

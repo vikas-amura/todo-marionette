@@ -1,24 +1,20 @@
 TodoMarionette.Controllers.Tasks = Marionette.Object.extend({
 
-  // initialize: function(options) {
-	// 	this.views = {};
-	// },
-
-  index: function() {
-    console.log("I'm inside controller and action is index");
+  initialize: function(options) {
+		this.views = {};
+	},
+	index: function() {
     this.collection = new TodoMarionette.Collections.Tasks();
-    this.collection.fetch();
-    console.log(this.collection);
-  },
+		var self = this;
+		this.collection.fetch().done(function(){
+			self._index();
+		});
+	},
+  _index: function(){
+  	var details = new TodoMarionette.Views.TasksIndex({collection: this.collection});
+		var taskLayout = new TodoMarionette.Layouts.Tasks();
+		$(".indexContainer").html(taskLayout.render().$el);
+		taskLayout.getRegion('index').show(details);
+	}
 
-	// index: function() {
-  // console.log("This is task Controllers");
-  //   this.collection = new TodoMarionette.Collections();
-  //
-  //   managing references
-	// 	var self = this;
-	// 	this.collection.fetch().done(function(){
-	// 		self._index();
-	// 	});
-	// },
 });
