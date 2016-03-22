@@ -1,0 +1,5 @@
+<span id="todo-count">
+	<strong><%= activeCount %></strong> <%= activeCountLabel %>
+</span>
+
+<button id="clear-completed" <% if (!completedCount) { %>class="hidden"<% } %>>Clear completed</button>

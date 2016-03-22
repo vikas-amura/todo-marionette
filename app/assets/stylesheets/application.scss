@@ -19,3 +19,44 @@
 *= require_tree .
 *= require_self
 */
+
+.footer{
+  margin-left:550px;
+}
+.completedcolor{
+	color:green;
+  border: 1px solid #ccc;
+}
+.activecolor{
+  color:red;
+  border: 1px solid #ccc;
+
+}
+li{
+  list-style: none;
+  width: 42%;
+  margin-left: -40px;
+  padding: 3px;
+}
+#new-todo{
+	width:40%;
+}
+.destroy{
+    float: right;
+    background-color: #ccc;
+}
+.edit{
+  display:none;
+}
+.editing{
+  display:inline-block;
+}
+.all{
+  float:left;
+}
+.active{
+  float:left;
+}
+.completed{
+  float:right;
+}

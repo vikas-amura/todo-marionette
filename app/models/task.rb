@@ -2,7 +2,7 @@ class Task
   include Mongoid::Document
 
   field :name, type: String
-  field :flag, type: Boolean, default: true
+  field :flag, type: Boolean, default: false
 
   def as_json(options = {})
     json = super(options)

@@ -1,5 +1,6 @@
 TodoMarionette.Routers.TasksRouter = Marionette.AppRouter.extend({
   appRoutes: {
-    '(/)': "index"
-  }
+    '(/)': "index",
+    '*filter': 'filterItems'
+  },
 });
